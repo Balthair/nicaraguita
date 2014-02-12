@@ -24,24 +24,54 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php //echo $cakeDescription ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		//echo $this->Html->css('cake.generic');
+
+        echo $this->Html->css('normalize');
+        echo $this->Html->css('default');
+        echo $this->Html->css('skitter.styles');
+
+        echo $this->Html->script('jquery');
+        echo $this->Html->script('jquery.easing.1.3');
+        echo $this->Html->script('jquery.animate-colors-min.js');
+        echo $this->Html->script('jquery.skitter.min');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
+		<header id="header">
+            <div class="headBack">
+                <nav id="mainMenuContainer">
+                    <div class="center">
+                        <ul id="mainMenu">
+                            <li><a href="">Inicio</a></li>
+                            <li><a href="">¿Quienes Somos?</a></li>
+                            <li><a href="">Paquetes</a></li>
+                            <li><a href="">Contactenos</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="center">
+            <?php echo $this->Html->image(
+                'logo.png',
+                array(
+                    'id' => 'logo'
+                )
+            ); ?>
+            </div>
+        <div class="clear"></div>
+        </header>
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
@@ -49,14 +79,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
+			<?php /*echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
 					'http://www.cakephp.org/',
 					array('target' => '_blank', 'escape' => false)
-				);
+				);*/
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //echo $this->element('sql_dump'); ?>
 </body>
 </html>

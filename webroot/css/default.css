@@ -1,0 +1,344 @@
+a {
+	text-decoration: none;
+}
+
+body {
+    background: url("../img/background.png");
+    font: normal 16px/1.4 'Maven Pro', sans-serif;
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+	background: none;
+}
+
+
+h1 {
+	color: #505050;
+	margin: 0;
+}
+
+hr {
+	border: 0;
+	border-top: solid 1px #ebebeb;
+}
+
+#circles {
+    position: relative;
+    top: -7em;
+    z-index: 99;
+}
+
+#header {
+    margin: 2em auto;
+    padding: 0;
+    position: relative;
+}
+
+#header:after, #circles:after, #title:after {
+    clear: both;
+    content:" 0020";
+    height: 0;
+    visibility: hidden;
+}
+
+#mainMenu {
+    float: right;
+    position: relative;
+    top: -15px;
+}
+
+    #mainMenu li {
+        color: #FFF;
+        display: inline;
+        font-weight: normal;
+        margin: 0 0 0 1em !important;
+    }
+
+        #mainMenu li>a {
+            color: #FFFFFF;
+            margin-left: 2em;
+        }
+
+#mainMenuContainer {
+    background: #135ce0;
+    height: 64px;
+    opacity: 0.6;
+    width: auto;
+}
+
+#mainPaquetes {
+    bottom: 115px;
+    position: relative;
+}
+
+#lastPaquetes {
+    margin-top: 1em;
+}
+
+#logo {
+    position: absolute;
+    bottom: -10px;
+}
+
+#pedido {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    float: left;
+    padding-left: 1em;
+    width: 60%;
+}
+
+#recomendados {
+    float: left;
+    width: 40%;
+}
+
+    #recomendados .title, #recomendados .headTitle {
+        background: #ff6100;
+        width: 50%;
+    }
+
+
+.categoria {
+    border: solid 10px #ececec;
+    border-radius: 125px;
+    float: left;
+    height: 172px;
+    margin-right: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 172px;
+}
+
+    div#circles .categoria:last-child {
+        margin-right: 0;
+    }
+
+.categoriaLabel {
+    background: #366f2c;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 64px;
+    line-height: 64px;
+    opacity: 0.8;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 2px 3px #000;
+    top: 54px;
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    margin: 0 auto;
+    width: 1024px;
+}
+
+.controles {
+    background: #93a8bd;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    bottom: 16px;
+    color: #FFF;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 420px;
+}
+
+.formPedido {
+    background: #ecec02;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height: 224px;
+    min-height: 100px;
+    padding: 1em;
+    width: 100%;
+}
+
+    .formPedido .btn {
+        background: #cbcb37;
+        border: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 12px;
+        margin-top: 2px;
+        width: 54%;
+    }
+
+        .formPedido .btn:hover {
+            background: #a8a826;
+        }
+
+.headBack {
+    background: url("../img/head_background.jpg") no-repeat center bottom;
+    height: 119px;
+    width: 100%;
+}
+
+.headTitle {
+    background: #339933;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: left;
+    height: 46px;
+    overflow: hidden;
+    opacity: 0.36;
+    position: relative;
+    width: 70%;
+}
+
+.headRecomendados {
+    background: #ff6100;
+}
+
+.input {    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    float: left;
+    margin: 3px;
+    margin-bottom: 2em;
+    padding: 10px;
+}
+
+.inputLarge {
+    width: 44%;
+}
+
+.inputMin {
+    width: 21%;
+}
+
+.imgPaquete {
+    float: left;
+    height: 225px;
+    overflow: hidden;
+    width: 30%;
+}
+
+.infoPaquete {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    float: right;
+    overflow: hidden;
+    padding-left: 1em;
+    width: 70%;
+}
+
+.mas {
+    color: #FFF;
+    float: left;
+    height: 100%;
+    text-align: center;
+    width: 50%;
+}
+
+    .mas img {
+        left: 10px;
+        position: absolute;
+        top: 10px;
+    }
+
+.nacionalesLabel {
+    background: #b55a2b;
+}
+
+.next {
+    background: url('../img/next.png') no-repeat;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+.paquete {
+    border-bottom: solid 1px #c5c5c5;
+    color: #484848;
+    height: 225px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    padding-bottom: 1em;
+    position: relative;
+}
+
+.precio {
+    background: #55799b;
+    float: right;
+    height: 100%;
+    text-align: center;
+    width: 50%;
+}
+
+.recomendado {
+    border-bottom: solid 1px #c5c5c5;
+    height: 40px;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    width: 100%;
+}
+    .recomendado:last-child {
+        border-bottom: none;
+    }
+
+    .recomendado span {
+        float: left;
+        line-height: 40px;
+    }
+
+    .recomendado .next {
+        background: url('../img/next.png') center #ff6100 no-repeat;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        display: block;
+        float: right;
+        padding: 0.5em;
+    }
+
+.serviciosLabel {
+    background: #92970e;
+}
+
+.title {
+    background: #339933;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #FFF;
+    float: left;
+    font-weight: bold;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    width: 30%;
+}
+
+.titleRecomendados {
+    background: #ff6100;
+}
+
+

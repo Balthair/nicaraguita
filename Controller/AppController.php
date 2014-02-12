@@ -33,4 +33,33 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+	public $helpers = array(
+		'Form'
+	);
+
+
+	public $components = array(
+		'DebugKit.Toolbar',
+		'Session',
+		'Auth' => array(
+			'loginRedirect' => array(
+				'controller' => 'users',
+				'action' => 'home'
+			),
+			'authError' => 'Usted no tiene permiso para accesar a ésta sección',
+			'logoutRedirect' => array(
+				'controller' => 'users',
+				'action' => 'login'
+			),
+			//'authorize' => array('Controller') // Added this line
+		)
+	);
+
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->set('dataUser',$this->Session->read('Auth'));
+		//$this->set('user',$user);
+	}
+	
 }
