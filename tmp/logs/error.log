@@ -1237,3 +1237,202 @@ Stack Trace:
 #8 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest), Object(CakeResponse))
 #9 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2014-02-12 17:37:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'recomendado' in 'where clause'
+Request URL: /nicaraguita/
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Package...', Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(669): DboSource->execute('SELECT `Package...', Array, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(1080): DboSource->fetchAll('SELECT `Package...', false)
+#4 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Model.php(2696): DboSource->read(Object(Package), Array)
+#5 C:\wamp\www\nicaraguita\Controller\HomeController.php(22): Model->find('all', Array)
+#6 [internal function]: HomeController->index()
+#7 C:\wamp\www\cakephp2.3.6\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(HomeController), Array)
+#8 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest), Object(CakeResponse))
+#10 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-02-13 20:36:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 20:37:57 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 20:38:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 20:41:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 20:41:43 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Package.user_id' in 'on clause'
+Request URL: /nicaraguita/admin/packages
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(460): PDOStatement->execute(Array)
+#1 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(426): DboSource->_execute('SELECT `Package...', Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(669): DboSource->execute('SELECT `Package...', Array, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Datasource\DboSource.php(1080): DboSource->fetchAll('SELECT `Package...', false)
+#4 C:\wamp\www\cakephp2.3.6\lib\Cake\Model\Model.php(2696): DboSource->read(Object(Package), Array)
+#5 C:\wamp\www\cakephp2.3.6\lib\Cake\Controller\Component\PaginatorComponent.php(197): Model->find('all', Array)
+#6 C:\wamp\www\cakephp2.3.6\lib\Cake\Controller\Controller.php(1074): PaginatorComponent->paginate(NULL, Array, Array)
+#7 C:\wamp\www\nicaraguita\Controller\PackagesController.php(17): Controller->paginate()
+#8 [internal function]: PackagesController->admin_index()
+#9 C:\wamp\www\cakephp2.3.6\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(PackagesController), Array)
+#10 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(PackagesController), Object(CakeRequest), Object(CakeResponse))
+#12 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2014-02-13 20:42:59 Error: [MissingViewException] View file "C:\wamp\www\nicaraguita\View\Packages\admin_index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\wamp\\www\\nicaraguita\\View\\Packages\\admin_index.ctp',
+)
+Request URL: /nicaraguita/admin/packages
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.3.6\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(PackagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-02-13 20:43:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 21:01:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 21:02:04 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 21:02:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:11:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:13:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:29:52 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\wamp\www\nicaraguita\Controller\PackagesController.php, line 50]
+2014-02-13 22:29:52 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /nicaraguita/admin/packages/add
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\wamp\www\nic...', 50)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\wamp\www\nic...', 50, Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\wamp\www\nic...', 50, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-13 22:30:12 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\wamp\www\nicaraguita\Controller\PackagesController.php, line 50]
+2014-02-13 22:30:12 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /nicaraguita/admin/packages/add
+Stack Trace:
+#0 C:\wamp\www\cakephp2.3.6\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\wamp\www\nic...', 50)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\wamp\www\nic...', 50, Array)
+#2 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\wamp\www\nic...', 50, Array)
+#3 C:\wamp\www\cakephp2.3.6\lib\Cake\Core\App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-02-13 22:30:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:31:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:32:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/css/toggle-switch.css
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:55:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/js/jquery.uploadifive.min.js
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-02-13 22:56:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /nicaraguita/js/jquery.uploadifive.min.js
+Stack Trace:
+#0 C:\wamp\www\nicaraguita\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
