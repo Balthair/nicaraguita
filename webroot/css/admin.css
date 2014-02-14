@@ -31,10 +31,6 @@ body {
     font: bold 16px/1.4;
 }
 
-table tr:hover {
-    background: #19fa2e;
-}
-
 #adminHead {
     background: #1d70b8;
     height: 60px;
@@ -152,6 +148,12 @@ table tr:hover {
 
 .actions-menu {
     float: right;
+}
+
+.bg-primary {
+    color: #fff;
+    background-color: #428bca;
+    padding: 15px;
 }
 
 .bs-glyphicons {

@@ -5,24 +5,10 @@
 	<?php
 		echo $this->Form->input('nombre',array('class'=>'form-control'));
 		echo $this->Form->input('categoria_id',array('class'=>'form-control'));
-		echo $this->Form->input('descripcion',array('class'=>'form-control'));
+		echo $this->Form->input('descripcion',array('class'=>'form-control wysiwyg'));
 		echo $this->Form->input('precio',array('class'=>'form-control'));
-		echo $this->Form->input('permalink',array('class'=>'form-control'));
 		//echo $this->Form->input('recomendado',array('class'=>'form-control'));
 	?>
-	<div class="upload-board">
-		<div class="head_upload">
-			<input id="file_upload" name="file_upload" type="file" multiple="false">
-			<a class="upload_all btn btn-success" style="position: relative;" href="javascript:$('#file_upload').uploadifive('upload')" title="Subir Archivos">
-				<span class="glyphicon glyphicon-open"></span>
-			</a>
-		</div>
-		<div id="queue">
-			<div class="print_images">
-				
-			</div>
-		</div>
-	</div>
 	<div class="text input">
 		<?php echo $this->Form->label('Recomendado'); ?>
 		<label class="switch-light well" onclick="">
@@ -48,30 +34,5 @@
 </div>
 
 <script type="text/javascript">
-	<?php 
-	$timestamp = time();
-	$seccion = base64_encode('editions');
-	$url = $this->Html->url('/upload/Upload_File/?seccion='.$seccion);
-	$check = $this->Html->url('/upload/check_exists/?seccion='.$seccion);
-	?>
-	$(function() {
-
-		$('#file_upload').uploadifive({
-			'auto'             : false,
-			'checkScript'      : '<?php echo $check ?>',
-			'formData'         : {
-								   'timestamp' : '<?php echo $timestamp;?>',
-								   'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
-			                     },
-			'queueID'          : 'queue',
-			'uploadScript'     : '<?php echo $url ?>',
-			'onUploadComplete' : function(file, data) { 
-				
-				$('.print_images').empty();
-
-				$('.print_images').append(data);
-
-			}
-		});
-	});
+	$('textarea').tiny_mce();
 </script>

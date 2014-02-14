@@ -30,7 +30,7 @@
 
 		//echo $this->Html->script('jquery.dataTables.min');
 
-		//echo $this->Html->script('tinymce/tinymce.min.js');
+		echo $this->Html->script('tinymce/tinymce.min.js');
 
 		echo $this->Html->script('jquery.uploadifive.min.js');
 

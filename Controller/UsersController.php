@@ -137,11 +137,11 @@ class UsersController extends AppController {
 		$this->redirect(array('action' => 'index'));
 	}
 
-	public function home() {
+	public function admin_home() {
 		$this->set(array('title_for_layout' => 'Administrador de NicaraguitaTours'));
 	}
 
-	public function login() {
+	public function admin_login() {
 
 		$this->layout = 'login';
 

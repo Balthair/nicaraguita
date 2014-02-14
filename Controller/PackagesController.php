@@ -40,12 +40,28 @@ class PackagesController extends AppController {
 	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->Package->create();
+			$this->request->data['Edition']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Edition']['nombre']);
+			$this->request->data['Edition']['user_id'] = $this->Auth->user('id');
+			$this->Package->id = @$this->Package->find(
+				'first',
+				array(
+					'conditions'=>array('Package.user_id'=>$this->Auth->user('id'),'Package.nombre'=>''),
+					'fields' => 'Package.id'
+				)
+			);
 			if ($this->Package->save($this->request->data)) {
-				$this->Session->setFlash(__('The package has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash('Se guardo el paquete','default',array('class'=>'bg-primary'));
+				$this->redirect(array('action' => 'edit/'.$this->Package->id));
 			} else {
-				$this->Session->setFlash(__('The package could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('No se pudo guardar el paquete, Por Favor intente de nuevo.'));
 			}
+		} else {
+			$this->Package->deleteAll(
+	    		array(
+	    			'Package.nombre' => '',
+					'user_id' => $this->Auth->user('id')
+	    		)
+	    	);
 		}
 		$categorias = $this->Package->Categoria->find('list');
 		$users = $this->Package->User->find('list');
@@ -74,7 +90,7 @@ class PackagesController extends AppController {
 			$options = array('conditions' => array('Package.' . $this->Package->primaryKey => $id));
 			$this->request->data = $this->Package->find('first', $options);
 		}
-		$categorias = $this->Package->Categorium->find('list');
+		$categorias = $this->Package->Categoria->find('list');
 		$users = $this->Package->User->find('list');
 		$this->set(compact('categorias', 'users'));
 	}

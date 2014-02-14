@@ -5,7 +5,6 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('nombre'); ?></th>
 			<th><?php echo $this->Paginator->sort('categoria_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('descripcion'); ?></th>
 			<th><?php echo $this->Paginator->sort('precio'); ?></th>
 			<th><?php echo $this->Paginator->sort('permalink'); ?></th>
 			<th><?php echo $this->Paginator->sort('recomendado'); ?></th>
@@ -19,7 +18,6 @@
 		<td>
 			<?php echo $this->Html->link($package['Categoria']['nombre'], array('controller' => 'categorias', 'action' => 'view', $package['Categoria']['id'])); ?>
 		</td>
-		<td><?php echo h($package['Package']['descripcion']); ?>&nbsp;</td>
 		<td><?php echo h($package['Package']['precio']); ?>&nbsp;</td>
 		<td><?php echo h($package['Package']['permalink']); ?>&nbsp;</td>
 		<td><?php echo h($package['Package']['recomendado']); ?>&nbsp;</td>
