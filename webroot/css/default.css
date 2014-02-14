@@ -164,7 +164,6 @@ hr {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    height: 224px;
     min-height: 100px;
     padding: 1em;
     width: 100%;
@@ -176,9 +175,11 @@ hr {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        padding: 12px;
+        float: right;
+        height: 48px;
         margin-top: 2px;
-        width: 54%;
+        padding: 12px;
+        width: 49.7%;
     }
 
         .formPedido .btn:hover {
@@ -216,19 +217,26 @@ hr {
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     float: left;
-    margin: 3px;
-    margin-bottom: 2em;
+    height: 50px;
+    margin: 0 0 4px 0;
     padding: 10px;
 }
 
 .inputLarge {
-    width: 44%;
+    width: 100%;
 }
 
 .inputMin {
-    width: 21%;
+    width: 49.7%;
 }
+    .inputMin:nth-child(2n+1) {
+        float: right;
+        margin-right: 0;
+    }
 
 .imgPaquete {
     float: left;

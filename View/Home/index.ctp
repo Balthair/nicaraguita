@@ -211,7 +211,7 @@
             echo $this->Form->input(
                 'paquete',
                 array(
-                    'class'=>'input inputLarge',
+                    'class'=>'input inputMin',
                     'options' => array(
                         1 => 'Nacionales',
                         2 => 'Internacionales',

@@ -138,7 +138,7 @@ class UsersController extends AppController {
 	}
 
 	public function home() {
-		$this->set(array('title_for_layout' => 'Asodenic'));
+		$this->set(array('title_for_layout' => 'Administrador de NicaraguitaTours'));
 	}
 
 	public function login() {
