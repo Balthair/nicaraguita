@@ -40,8 +40,8 @@ class PackagesController extends AppController {
 	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->Package->create();
-			$this->request->data['Edition']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Edition']['nombre']);
-			$this->request->data['Edition']['user_id'] = $this->Auth->user('id');
+			$this->request->data['Package']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Package']['nombre']);
+			$this->request->data['Package']['user_id'] = $this->Auth->user('id');
 			$this->Package->id = @$this->Package->find(
 				'first',
 				array(

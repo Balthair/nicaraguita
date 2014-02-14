@@ -3,14 +3,14 @@ Navicat MySQL Data Transfer
 
 Source Server         : localhost
 Source Server Version : 50524
-Source Host           : 127.0.0.1:3306
+Source Host           : localhost:3306
 Source Database       : nicaraguita
 
 Target Server Type    : MYSQL
 Target Server Version : 50524
 File Encoding         : 65001
 
-Date: 2014-02-14 07:32:02
+Date: 2014-02-14 17:29:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,13 +23,17 @@ CREATE TABLE `categorias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) CHARACTER SET latin1 NOT NULL,
   `permalink` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of categorias
 -- ----------------------------
-INSERT INTO `categorias` VALUES ('12', 'Nacionales', 'nacionales');
+INSERT INTO `categorias` VALUES ('12', 'Nacionales', 'nacionales', '8');
+INSERT INTO `categorias` VALUES ('13', 'Internacionales', 'internacionales', '0');
+INSERT INTO `categorias` VALUES ('14', 'Circuitos', 'circuitos', '8');
+INSERT INTO `categorias` VALUES ('16', 'Boletos', 'boletos', '8');
 
 -- ----------------------------
 -- Table structure for images
@@ -41,11 +45,16 @@ CREATE TABLE `images` (
   `seccion_id` int(11) NOT NULL,
   `extension` char(5) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=802 DEFAULT CHARSET=utf8 COMMENT='seccion1 - contenidos2 - noticias3 - proyectosseccion_idEs e';
+) ENGINE=MyISAM AUTO_INCREMENT=809 DEFAULT CHARSET=utf8 COMMENT='seccion1 - contenidos2 - noticias3 - proyectosseccion_idEs e';
 
 -- ----------------------------
 -- Records of images
 -- ----------------------------
+INSERT INTO `images` VALUES ('803', 'package', '8', 'jpg');
+INSERT INTO `images` VALUES ('804', 'package', '8', 'jpg');
+INSERT INTO `images` VALUES ('805', 'package', '8', 'jpg');
+INSERT INTO `images` VALUES ('806', 'package', '1', 'jpg');
+INSERT INTO `images` VALUES ('808', 'categorias', '16', 'jpg');
 
 -- ----------------------------
 -- Table structure for packages
@@ -61,7 +70,7 @@ CREATE TABLE `packages` (
   `recomendado` tinyint(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of packages
@@ -70,6 +79,7 @@ INSERT INTO `packages` VALUES ('1', 'San Juan del Sur', '12', '<p>El que una vez
 INSERT INTO `packages` VALUES ('2', 'Punta Teonoste', '12', '<p>Punta Teonoste es un hotel de playa en el que se trata de armonizar la comodidad con el medio ambiente. Hay varios &aacute;rboles frondosos en el amplio terreno, ubicado frente a una playa despoblada en la que se puede observar arena blanca, oscura y rosada.</p>\r\n<p>El local ofrece peque&ntilde;as caba&ntilde;as de dos plantas, todas poseen sala, abanico, ba&ntilde;o privado y una peque&ntilde;a refrigeradora. &Eacute;stas tienen un concepto r&uacute;stico que se combina con la comodidad. Adem&aacute;s, el local ofrece una piscina, un spa y un gimnasio.</p>\r\n<p>El restaurante del hotel ofrece un variado men&uacute;, con especialidad en pescados y mariscos extra&iacute;dos del lugar. Tambi&eacute;n se ofrece alquiler de bicicletas, caballos y tablas de surf. Todos los precios incluyen: cocktail de bienvenida, acceso a Internet inal&aacute;mbrico, bicicletas, tablas de surf y boggy, paseo a caballo, juegos de mesa, tratamiento con ozono en el spa, entre otros.</p>\r\n<p>Tanto la playa como el terreno son frecuentados por animales silvestres como pelicanos, querques, urracas, conejos, iguanas, garrobos y ardillas. Se pueden realizar caminatas hacia las playas vecinas o conocer la isla rocosa frente a esta playa, accesible durante la marea baja por un estrecho de piedra.</p>\r\n<p>Para reservaciones o informaci&oacute;n comunicarse a: Hotel Los Robles, Managua, Tel. 267-3008, Fax: 270-1074.</p>\r\n<p>Los precios var&iacute;an seg&uacute;n temporada, favor contactar al hotel para m&aacute;s detalle.</p>', '45', '', '0', '0');
 INSERT INTO `packages` VALUES ('3', 'Montelimar', '12', '<p>Es una de las playas m&aacute;s exclusivas de Centroam&eacute;rica, por albergar al primer resort de alta calidad en el pa&iacute;s. La playa de arena fina est&aacute; sembrada de numerosas palmeras, y se ha convertido en un icono de la belleza del Pac&iacute;fico. S&oacute;lo a traves del hotel se puede ingresar a ella por tierra.</p>\r\n<p>El dictador Anastasio Somoza la eligi&oacute; para contruir ah&iacute; su mansi&oacute;n de veraneo a la orilla del mar, que hoy es el casino del resort.</p>\r\n<p>Es ideal para la pr&aacute;ctica del windsurf, tomar el sol.</p>\r\n<p>En &eacute;sta se encuentra el primer resort de Nicaragua, siendo la &uacute;nica opci&oacute;n para pasar la noche aqu&iacute;. Este hotel cuenta con infraestructura bastante completa.</p>', '120', '', '0', '0');
 INSERT INTO `packages` VALUES ('7', 'Marina Puesta del Sol', '12', '<p>El Resort Marina Puesta del Sol comprende 600 hect&aacute;reas en la playa de Aserradores. El hotel ofrece a sus hu&eacute;spedes y viajeros de la Marina una experiencia &uacute;nica con acceso a kil&oacute;metros de canales serenos y manglares. Tambi&eacute;n, es posible realizar varias actividades, incluyendo nadar, navegar y pescar en las aguas tibias del Pac&iacute;fico, explorar a caballo las colinas aleda&ntilde;as, jugar al tennis y nadar en las piscinas del hotel.</p>\r\n<p>Marina Puesta del Sol brinda todas las comodidades de un resort de lujo con 20 c&oacute;modas suites. Todas &eacute;stas equipadas con aire acondicionado, ba&ntilde;os lujosos, TV por cable y con todo lo necesario para tener una estad&iacute;a confortable. El lugar tambi&eacute;n cuenta con un restaurante, bar y spa. En fin, un lugar magnifico para aquellos que aman la naturaleza con la calidad de un servicio personalizado y una variedad de comodidades.</p>\r\n<p>Pronto ser&aacute;n construidos dos m&oacute;dulos de condo-hotel con 64 suites frente al mar. Para m&aacute;s informaci&oacute;n, visitar el sitio web (ver informaci&oacute;n de contacto). Marina Puesta del Sol tambi&eacute;n pertenece al grupo&nbsp;<a href=\"http://www.sbhotelsnicaragua.com/\">Small Boutique Hotels</a>&nbsp;de Nicaragua.</p>', '215', '', '0', '0');
+INSERT INTO `packages` VALUES ('8', 'Isla de Ometepe', '12', '<p>En el lago de Nicaragua, llamado por los conquistadores espa&ntilde;oles &ldquo;el mar de agua dulce&rdquo; por su inmensidad, sobresale la isla de Ometepe cuyo nombre en n&aacute;huatl significa &ldquo;dos cerros&rdquo;. La isla de 276 kil&oacute;metros cuadrados alberga a dos majestuosos volcanes unidos por un corto istmo, y es actualmente uno de los destinos naturales preferido por turistas nacionales y extranjeros por su ambiente hospitalario y pasivo, sus hermosos paisajes, sus dos volcanes, la riqueza arqueol&oacute;gica, sus tranquilas playas y sus numerosas reservas naturales y bosques donde puede apreciarse una importante biodiversidad.</p>\r\n<p>Desde siempre, la isla ha representado un destino paradis&iacute;aco. En tiempos precolombinos, seg&uacute;n relatos obtenidos por historiadores, tribus ind&iacute;genas se desplazaron del norte hasta Centroam&eacute;rica en b&uacute;squeda de un para&iacute;so vislumbrado por sus sacerdotes: una tierra formada por dos cerros, y en sus andares lo encontraron. La isla de Ometepe se convirti&oacute; entonces en un santuario habitado por una mezcla de diversas tribus y culturas, lo cual es revelado por la enorme cantidad de petroglifos, cer&aacute;mica y estatuaria que pueden apreciarse en toda la zona.</p>\r\n<p>La isla es habitada por personas amables y sonrientes enamoradas de su tierra, dedicadas sobre todo a la pesca y la producci&oacute;n agr&iacute;cola de gran calidad que provee el f&eacute;rtil suelo isle&ntilde;o. Actualmente, los ometepinos han comenzado a dedicarse a la atenci&oacute;n de turistas y numerosos locales de servicios han sido instalados en la isla, con la disposici&oacute;n de acoger a los visitantes del mundo entero que deseen visitar este para&iacute;so.</p>', '250', '', '0', '8');
 
 -- ----------------------------
 -- Table structure for users
