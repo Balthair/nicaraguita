@@ -32,7 +32,7 @@
 
 		//echo $this->Html->script('tinymce/tinymce.min.js');
 
-		//echo $this->Html->script('jquery.uploadifive.min.js');
+		echo $this->Html->script('jquery.uploadifive.min.js');
 
 		//echo $this->Html->script('jquery-ui-timepicker-addon.js');
 
