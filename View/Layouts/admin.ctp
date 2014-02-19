@@ -65,7 +65,7 @@
 				<?php echo $this->Html->image('user.png',array('height' => '100%')); ?>
 			</div>
 			<div class="textHead">
-				<span class="title"><?php echo 'Bienvenido '.$dataUser['User']['username'].' | '.$this->Html->link('Cerrar Sesión','/users/logout');?></span>
+				<span class="title"><?php echo 'Bienvenido '.$dataUser['User']['username'].' | '.$this->Html->link('Cerrar Sesión','/admin/users/logout');?></span>
 			</div>
 		</div>
 	</header>
