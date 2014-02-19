@@ -49,6 +49,33 @@ class PackagesController extends AppController {
 					'fields' => 'Package.id'
 				)
 			);
+			$rel = $this->Package->find(
+				'all',
+				array(
+					'conditions' => array(
+						'Package.recomendado' => 1
+					),
+					'limit' => 2,
+					'order' => array(
+						'Package.id' => 'DESC'
+					)
+				)
+			);
+			if(!empty($rel)) {
+				$this->Package->updateAll(
+					array('Package.recomendado' => 0),
+					array(
+						'Package.recomendado' => 1,
+						'NOT' => array(
+							'Package.id' => array(
+								$rel[0]['Package']['id'],
+								$rel[1]['Package']['id']
+							)
+						)
+					)
+				);
+			}
+
 			if ($this->Package->save($this->request->data)) {
 				$this->Session->setFlash('Se guardo el paquete','default',array('class'=>'bg-primary'));
 				$this->redirect(array('action' => 'edit/'.$this->Package->id));
@@ -59,7 +86,7 @@ class PackagesController extends AppController {
 			$this->Package->deleteAll(
 	    		array(
 	    			'Package.nombre' => '',
-					'user_id' => $this->Auth->user('id')
+					'Package.user_id' => $this->Auth->user('id')
 	    		)
 	    	);
 		}
@@ -80,8 +107,36 @@ class PackagesController extends AppController {
 			throw new NotFoundException(__('Invalid package'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$this->request->data['Package']['permalink'] = $this->Funciones->generatePermalink($this->request->data['Package']['nombre']);
+			$this->request->data['Package']['user_id'] = $this->Auth->user('id');
+			$rel = $this->Package->find(
+				'all',
+				array(
+					'conditions' => array(
+						'Package.recomendado' => 1
+					),
+					'limit' => 2,
+					'order' => array(
+						'Package.id' => 'DESC'
+					)
+				)
+			);
+			if(!empty($rel)) {
+				$this->Package->updateAll(
+					array('Package.recomendado' => 0),
+					array(
+						'Package.recomendado' => 1,
+						'NOT' => array(
+							'Package.id' => array(
+								$rel[0]['Package']['id'],
+								$rel[1]['Package']['id']
+							)
+						)
+					)
+				);
+			}
 			if ($this->Package->save($this->request->data)) {
-				$this->Session->setFlash(__('The package has been saved'));
+				$this->Session->setFlash('Se guardo el paquete','default',array('class'=>'bg-primary'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The package could not be saved. Please, try again.'));
@@ -114,6 +169,33 @@ class PackagesController extends AppController {
 		}
 		$this->Session->setFlash(__('Package was not deleted'));
 		$this->redirect(array('action' => 'index'));
+	}
+
+	public function view($id = null) {
+		$id = explode('-', $id);
+		if (!$this->Package->exists($id[0])) {
+			throw new NotFoundException(__('Paquete Invalido'));
+		}
+		$options = array('conditions' => array('Package.' . $this->Package->primaryKey => $id));
+		$this->set('package', $this->Package->find('first', $options));
+	}
+
+	public function viewAll() {
+		$packages =  $this->Package->find(
+            'all',
+            array(
+                'conditions' => array(
+                    'Package.nombre !=' => ''
+                ),
+                'order' => array('Package.id'=>'DESC')
+            )
+        );
+         $this->set(
+            array(
+                'title_for_layout' => 'Nicaraguita Tours - Paquetes',
+                'packages' => $packages,
+            )
+        );
 	}
 
 	public function beforeFilter() {

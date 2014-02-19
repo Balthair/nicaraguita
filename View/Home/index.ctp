@@ -1,35 +1,20 @@
 <div class="box_skitter box_skitter_large">
     <ul>
+        <?php foreach ($specials as $e): ?>
+            
         <li>
             <?php
             echo $this->Html->image(
-                '/files/package/1.png',
-                array(
-                    'url' => '#'
-                )
+                '/files/'.$e['Image']['seccion'].'/'.$e['Image']['id'].'.'.$e['Image']['extension']
             );
             ?>
             <div class="label_text">
                 <div class="center">
-                    Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id.
+                    <?php echo $e['Special']['titulo'] ?>
                 </div>
             </div>
         </li>
-        <li>
-            <?php
-            echo $this->Html->image(
-                '/files/package/1.png',
-                array(
-                    'url' => '#'
-                )
-            );
-            ?>
-            <div class="label_text">
-                <div class="center">
-                    Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id.
-                </div>
-            </div>
-        </li>
+        <?php endforeach ?>
     </ul>
 </div>
 <script type="text/javascript" language="javascript">
@@ -46,57 +31,19 @@
 <div class="clear"></div>
 
 <div class="center" id="circles">
-    <a href="#" class="categoria">
-        <?php 
-        echo $this->Html->image(
-            'hotel.png'
-        );
-         ?>
-        <div class="categoriaLabel">
-            Internacional
-        </div>
-    </a>
-    <a href="#" class="categoria">
-        <?php 
-        echo $this->Html->image(
-            'mokul.png'
-        );
-         ?>
-        <div class="categoriaLabel">
-            Nacionales
-        </div>
-    </a>
-    <a href="#" class="categoria">
-        <?php 
-        echo $this->Html->image(
-            'boletos.png'
-        );
-         ?>
-        <div class="categoriaLabel">
-            Boletos
-        </div>
-    </a>
-    <a href="#" class="categoria">
-        <?php 
-        echo $this->Html->image(
-            'mapa.png'
-        );
-         ?>
-        <div class="categoriaLabel">
-            Circuitos
-        </div>
-    </a>
-    <a href="#" class="categoria">
-        <?php 
-        echo $this->Html->image(
-            'servicios.png'
-        );
-         ?>
-        <div class="categoriaLabel">
-            Servicios
-        </div>
-    </a>
-
+    <?php foreach ($categorias as $categoria): ?>
+        <a href="#" class="categoria">
+            <?php 
+            echo $this->Html->image(
+                '/files/'.$categoria['Image']['seccion'].'/thumbs/'.$categoria['Image']['id'].'.'.$categoria['Image']['extension']
+            );
+             ?>
+            <div class="categoriaLabel">
+                <?php echo $categoria['Categoria']['nombre'] ?>
+            </div>
+        </a>
+    <?php endforeach ?>
+    
 </div>
 
 <div class="center" id="mainPaquetes">
@@ -120,12 +67,19 @@
             <div class="paquete">
                 <div class="imgPaquete">
                     <?php 
-                    $src = $this->Html->url(
-                        "/files/dependencias/logos/".$p["Images"]["id"].".".$p["Images"]["extension"],
-                        true
-                    );
+                    if(isset($p["Image"][0])) {
+                        $src = $this->Html->url(
+                            "/files/".$p["Image"][0]["seccion"]."/thumbs/".$p["Image"][0]["id"].".".$p["Image"][0]["extension"],
+                            true
+                        );
+                    } else {
+                        $src = $this->Html->url(
+                            "/img/noimage.jpg",
+                            true
+                        );
+                    }
 
-                    $this->Image->image($src);
+                    $this->Image->imagen($src);
 
                     if ($this->Image->image_width == 0 or count($packages) < 1) {
                         
@@ -151,7 +105,7 @@
                     </article>
                 </div>
                 <div class="controles">
-                    <a href="" class="mas">
+                    <a href="<?php echo $this->Html->url('/packages/view/'.$p['Package']['id'].'-'.$p['Package']['permalink']); ?>" class="mas">
                         <?php echo $this->Html->image('mas.png'); ?>
                         Ver Más
                     </a>
@@ -181,7 +135,7 @@
             <div class="recomendado">
                 <span><?php echo $r['Package']['nombre'] ?></span>
                 <?php 
-                echo $this->Html->link('','#',array('class'=>'next'));
+                echo $this->Html->link('','/packages/view/'.$r['Package']['id'].'-'.$r['Package']['permalink'],array('class'=>'next'));
                 ?>
             </div>
         <?php endforeach ?>
@@ -206,8 +160,8 @@
             echo $this->Form->input('ninos', array('class'=>'input inputMin','placeholder'=>'Niños'));
             echo $this->Form->input('adultos', array('class'=>'input inputMin','placeholder'=>'Adultos'));
             echo $this->Form->input('email', array('class'=>'input inputLarge','placeholder'=>'Email'));
-            echo $this->Form->input('salida', array('class'=>'input inputMin','placeholder'=>'Fecha Salida'));
-            echo $this->Form->input('regreso', array('class'=>'input inputMin','placeholder'=>'Fecha Regreso'));
+            echo $this->Form->input('salida', array('class'=>'input inputMin datepicker','placeholder'=>'Fecha Salida'));
+            echo $this->Form->input('regreso', array('class'=>'input inputMin datepicker','placeholder'=>'Fecha Regreso'));
             echo $this->Form->input(
                 'paquete',
                 array(
@@ -233,6 +187,11 @@
             <div class="clear"></div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function() {
+            $( ".datepicker" ).datepicker();
+          });
+    </script>
     
 
 </div>

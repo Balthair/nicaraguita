@@ -1,0 +1,30 @@
+/*Aqui modifico propiedades del jquery ui*/
+.ui-widget{
+    font-size: 10.8px !important;
+}
+
+.date-noticias{
+    margin: 1em 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br{
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+     background: #DADADA !important;
+ }
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+    background: #FCEFA0 !important;
+}
+
+.ui-widget-content, .ui-widget-content{
+    border: solid 1px #E1E1E1 !important;
+}
+
+.ui-widget-header{
+    background: #CCCCCC !important;
+}

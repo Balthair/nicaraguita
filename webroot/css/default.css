@@ -30,6 +30,56 @@ hr {
     z-index: 99;
 }
 
+#footer {
+    background: url('../img/bg_pie.png');
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #999999;
+    height: 214px;
+    padding: 3em;
+    width: 100%;
+}
+    #footer a {
+        color: #999;
+    }
+        #footer a:hover {
+            text-decoration: underline;
+        }
+    #footer .maps {
+        float: left;
+        width: 40%;
+    }
+    #footer .otra-info {
+        float: left;
+        width: 60%;
+    }
+    #footer #menu-foot {
+        border-bottom: solid 1px #CCC;
+        float: right;
+    }
+        #footer #menu-foot ul li {
+            display: inline;
+            margin-left: 3em;
+        } 
+    #footer .formas-pago, #footer .piggy {
+        border-right: solid 1px #CCC;
+        float: left;
+        margin-top: 1.5em;
+        margin-left: 2.5em;
+        padding-right: 1em;
+    }
+    #footer .piggy {
+        border: 0;
+        float: right;
+        margin-right: 0;
+        padding: 0;
+        text-align: right;
+    }
+        #footer .piggy img {
+            margin-top: 15px;
+        }
+
 #header {
     margin: 2em auto;
     padding: 0;
@@ -82,6 +132,18 @@ hr {
     bottom: -10px;
 }
 
+#paquete h1 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#paquete .otros {
+    background: #CCC;
+    border-radius: 10px;
+    height: 395px;
+    width: 100%;
+}
+
 #pedido {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -100,6 +162,10 @@ hr {
         background: #ff6100;
         width: 50%;
     }
+
+.box_skitter img {
+    width: 100%;
+}
 
 
 .categoria {
@@ -165,7 +231,7 @@ hr {
     -moz-border-radius: 10px;
     border-radius: 10px;
     min-height: 100px;
-    padding: 1em;
+    padding: 2em;
     width: 100%;
 }
 
@@ -176,7 +242,7 @@ hr {
         -moz-border-radius: 5px;
         border-radius: 5px;
         float: right;
-        height: 48px;
+        height: 43px;
         margin-top: 2px;
         padding: 12px;
         width: 49.7%;
@@ -193,7 +259,7 @@ hr {
 }
 
 .headTitle {
-    background: #339933;
+    background: #aaceaa;
     -webkit-border-top-right-radius: 10px;
     -webkit-border-bottom-right-radius: 10px;
     -moz-border-radius-topright: 10px;
@@ -203,7 +269,6 @@ hr {
     float: left;
     height: 46px;
     overflow: hidden;
-    opacity: 0.36;
     position: relative;
     width: 70%;
 }
@@ -221,8 +286,8 @@ hr {
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     float: left;
-    height: 50px;
-    margin: 0 0 4px 0;
+    height: 45px;
+    margin: 0 0 10px 0;
     padding: 10px;
 }
 
@@ -231,7 +296,7 @@ hr {
 }
 
 .inputMin {
-    width: 49.7%;
+    width: 48.7%;
 }
     .inputMin:nth-child(2n+1) {
         float: right;
@@ -254,6 +319,7 @@ hr {
     padding-left: 1em;
     width: 70%;
 }
+
 
 .mas {
     color: #FFF;
@@ -324,6 +390,16 @@ hr {
         padding: 0.5em;
     }
 
+.share {
+    float: right;
+    padding: 12px;
+}
+
+.share .fb-like, .share .twitter {
+    float: left;
+    margin-right: 10px;
+}
+
 .serviciosLabel {
     background: #92970e;
 }
@@ -347,6 +423,12 @@ hr {
 
 .titleRecomendados {
     background: #ff6100;
+}
+
+/*Jquery UI*/
+
+.ui-widget{
+    font-size: 10.8px !important;
 }
 
 

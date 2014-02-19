@@ -13,7 +13,7 @@
 		echo $this->Html->css('admin');
 		echo $this->Html->css('toggle-switch');
 		//echo $this->Html->css('demo_table_jui');
-		echo $this->Html->css('http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
+		//echo $this->Html->css('http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css');
 		//echo $this->Html->css('jquery.ui.modify');
 
 		echo $this->Html->css('uploadifive.css');
@@ -21,8 +21,8 @@
 		echo $this->Html->css('chosen.css');
 		echo $this->Html->css('chosen-bootstrap.css');
 
-		echo $this->Html->script('http://code.jquery.com/jquery-2.0.0.min.js');
-		echo $this->Html->script('http://code.jquery.com/ui/1.10.3/jquery-ui.js');
+		echo $this->Html->script('jquery');
+		//echo $this->Html->script('http://code.jquery.com/ui/1.10.3/jquery-ui.js');
 
 
 		//echo $this->Html->script('bootstrap');
@@ -54,7 +54,7 @@
 				<?php echo $this->Html->image('g_piggy2.png',array('height' => '100%')); ?>
 			</div>
 			<div class="textHead">
-				<span class="title">Asodenic</span>
+				<span class="title">Nicaraguita</span>
 			</div>
 		</div>
 		<div id="mainMenu" class="textHead">

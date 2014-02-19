@@ -35,8 +35,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         echo $this->Html->css('normalize');
         echo $this->Html->css('default');
         echo $this->Html->css('skitter.styles');
+        echo $this->Html->css('//code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css');
 
         echo $this->Html->script('jquery');
+        echo $this->Html->script('//code.jquery.com/ui/1.10.4/jquery-ui.js');
         echo $this->Html->script('jquery.easing.1.3');
         echo $this->Html->script('jquery.animate-colors-min.js');
         echo $this->Html->script('jquery.skitter.min');
@@ -48,15 +50,25 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	<div id="container">
 		<header id="header">
             <div class="headBack">
                 <nav id="mainMenuContainer">
                     <div class="center">
                         <ul id="mainMenu">
-                            <li><a href="">Inicio</a></li>
+                            <li><a href="<?php echo $this->Html->url('/'); ?>">Inicio</a></li>
                             <li><a href="">¿Quienes Somos?</a></li>
-                            <li><a href="">Paquetes</a></li>
+                            <li><a href="<?php echo $this->Html->url('/packages/viewAll'); ?>">Paquetes</a></li>
                             <li><a href="">Contactenos</a></li>
                         </ul>
                     </div>
@@ -78,13 +90,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
+        <div class="clear"></div>
 		<div id="footer">
-			<?php /*echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);*/
-			?>
+			<?php echo $this->element('footer');?>
 		</div>
 	</div>
 	<?php //echo $this->element('sql_dump'); ?>
