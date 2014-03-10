@@ -42,6 +42,7 @@ class HomeController extends AppController {
         );
 
         $categorias = $this->Categoria->find('all',array('conditions'=>array('nombre !='=>'')));
+        $this->layout = "temp";
         $this->set(
             array(
                 'title_for_layout' => 'Nicaraguita Tours',

@@ -345,8 +345,9 @@ Cache::config('_cake_model_', array(
 	'duration' => $duration
 ));
 
-Configure::write('img_root', 'http://localhost/nicaraguita/files/');
+//Configure::write('img_root', 'http://localhost/nicaraguita/files/');
+/*$protocolo =  isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
+Configure::write('img_root', $protocolo.$_SERVER['HTTP_HOST'].'/nicaraguita/files/');*/
 //Configure::write('img_root', 'http://nuevo.radionicaragua.com.ni/files/');
-
 Configure::write('absolute_root', $_SERVER['DOCUMENT_ROOT'].'nicaraguita/webroot/files/'); 
 //Configure::write('absolute_root', $_SERVER['DOCUMENT_ROOT'].'/app/webroot/files/'); 

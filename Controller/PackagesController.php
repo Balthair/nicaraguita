@@ -7,6 +7,8 @@ App::uses('AppController', 'Controller');
  */
 class PackagesController extends AppController {
 
+	public $components = array('Funciones');
+
 /**
  * admin_index method
  *

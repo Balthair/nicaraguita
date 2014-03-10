@@ -5,8 +5,8 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'root',
-		'password' => 'root',
+		'login' => 'nicaraguita2014',
+		'password' => 'Ev66pTNRIcfdwDo',
 		'database' => 'nicaraguita',
 		'encoding' => 'utf8'
 	);

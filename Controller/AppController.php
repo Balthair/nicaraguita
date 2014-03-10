@@ -57,6 +57,7 @@ class AppController extends Controller {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		Configure::write('img_root', Router::url('/', true).'files/');
 		$this->set('dataUser',$this->Session->read('Auth'));
 		//$this->set('user',$user);
 	}

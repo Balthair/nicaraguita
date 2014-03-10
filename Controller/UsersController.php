@@ -14,15 +14,10 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function admin_index() {
 		$this->User->recursive = 0;
 		$this->paginate = array('order' => array('User.id' => 'DESC'));
 		$this->set('users', $this->paginate());
-		$this->set(
-			array(
-				'title_for_layout' => 'Usuarios'
-			)
-		);
 	}
 
 /**
@@ -32,9 +27,9 @@ class UsersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function admin_view($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('El usuario no existe'));
+			throw new NotFoundException(__('Invalid user'));
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
@@ -45,28 +40,17 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function admin_add() {
 		if ($this->request->is('post')) {
-			$this->User->create();
 			$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
-			$this->request->data['User']['created'] = CakeTime::format('Y-m-d h:i:s', time());
-			$this->request->data['User']['user_created'] = $this->Auth->user('id');
+			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('El usuario ha sido guardado correctamente'));
+				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('El usuario no fue guardado. Por favor, Intente nuevamente.'));
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
-		$perfils = $this->User->Perfil->find('list');
-		$sucursales = $this->User->Sucursale->find('list');
-		$this->set(compact('perfils', 'sucursales'));
-		$this->set(
-			array(
-				'title_for_layout' => 'Usuarios'
-			)
-		);
-
 	}
 
 /**
@@ -76,44 +60,22 @@ class UsersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function admin_edit($id = null) {
 		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('El usuario no existe'));
+			throw new NotFoundException(__('Invalid user'));
 		}
-
 		if ($this->request->is('post') || $this->request->is('put')) {
-			$reg = $this->User->find(
-				'first',
-				array(
-					'conditions' => array(
-						'User.id' => $id
-					)
-				)
-			);
-
-			if ($this->request->data['User']['password'] != $reg['User']['password'])
-				$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
-
-			$this->request->data['User']['modified'] = CakeTime::format('Y-m-d h:i:s', time());
-			$this->request->data['User']['user_modified'] = $this->Auth->user('id');
+			$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('El usuario ha sido guardado correctamente'));
+				$this->Session->setFlash(__('The user has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('El usuario no fue guardado. Por favor, Intente nuevamente.'));
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
-		$perfils = $this->User->Perfil->find('list');
-		$sucursales = $this->User->Sucursale->find('list');
-		$this->set(compact('perfils', 'sucursales'));
-		$this->set(
-			array(
-				'title_for_layout' => 'Usuarios'
-			)
-		);
 	}
 
 /**
@@ -123,7 +85,7 @@ class UsersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function admin_delete($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
@@ -138,7 +100,7 @@ class UsersController extends AppController {
 	}
 
 	public function admin_home() {
-		$this->set(array('title_for_layout' => 'Administrador de NicaraguitaTours'));
+		$this->set(array('title_for_layout' => 'PiggyAdmin'));
 	}
 
 	public function admin_login() {
